@@ -10,7 +10,7 @@ public class Lista {
 			if(lista.memoria[i]==true)
 				contador++;
 		}
-		return contador;
+		return contador+1;
 	}
 	
 	public void INSERTA(Object n, int posicion) {	
@@ -29,14 +29,9 @@ public class Lista {
 	    }
 
 	}	
-	   /*if(tamaño>0 && tamaño<=posicion) {
-	   Nodo nuevo= new Nodo();
-	   nuevo.setDato(n);
-	   if(posicion== 1) {//si se inserta en la primera posición
-		   nuevo.setSiguiente(lista.cabeza);
-	   }
-		}*/
 
+	public void SUPRIME(int posicion) {
+	    }
 
 	public int LOCALIZA(Object n) {
 		int localiza= 0;
@@ -72,10 +67,6 @@ public class Lista {
 	        }
 	      return lista.elementos[puntero].getDato();
 	}
-
-	public void SUPRIME(int posicion) {
-		
-	}
 	
 	public int SIGUIENTE(int n) {
 		return n++;
@@ -104,12 +95,14 @@ public class Lista {
 	}
 
 	public void verLista() {
+		String cadena= " ";
 		int posicion= lista.cabeza;
 		
 		while(posicion!=-1) {
-			System.out.println(lista.elementos[posicion].getDato());
+			cadena+= lista.elementos[posicion].getDato() + " ";
 			posicion= lista.elementos[posicion].getSiguiente();
 		}
+		System.out.println(cadena);
 	}
 
 	@Override
