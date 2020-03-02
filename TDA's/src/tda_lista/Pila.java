@@ -15,7 +15,7 @@ public class Pila {
 	}
 	
 	public void SACA() {
-		L1.SUPRIMRE(1);
+		L1.SUPRIME(1);
 	}
 	
 	public void METE(Object n) {

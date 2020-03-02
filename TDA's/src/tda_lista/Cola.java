@@ -19,7 +19,7 @@ public class Cola {
 	}
 	
 	public void QUITA_DE_COLA() {
-		L1.SUPRIMRE(L1.FIN()-1);
+		L1.SUPRIME(L1.FIN()-1);
 	}
 	
 	public boolean VACIA() {
