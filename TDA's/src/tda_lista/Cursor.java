@@ -17,7 +17,7 @@ public class Cursor {
     public int asignarMemoria()
     {
         int indice=0;
-        
+        //recorrerá cada elemento y al encontrar uno vacío, regresará esa posición y se tachará como llena
         for (int i = 0; i < memoria.length; i++) 
             if (memoria[i]==false){
                 indice = i;

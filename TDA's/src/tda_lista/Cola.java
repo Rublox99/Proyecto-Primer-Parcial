@@ -27,6 +27,7 @@ public class Cola {
 	}
 	
 	public void verCola() {
+		System.out.println("<-Entrada     Salida->");
 		L1.verLista();
 	}
 }

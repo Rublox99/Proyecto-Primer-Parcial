@@ -27,6 +27,7 @@ public class Pila {
 	}
 	
 	public void verPila() {
+		System.out.println("<-Tope");
 		L1.verLista();
 	}
 }
