@@ -46,4 +46,47 @@ public class Cursor {
        return -1; 
     }
     
+    public int posicionCubeta(int posicion) {
+    	int cuenta= 1;
+    	int siguiente= cabeza;
+    	
+    	while(posicion!= cuenta) {
+    		siguiente= elementos[siguiente].getSiguiente();
+    		cuenta++;
+    	}
+
+    	return siguiente;
+	}
+
+    public int cuentaElementos() {
+    	int contador= 0;
+	
+    	for(int i= 0; i<memoria.length; i++) {
+    		if(memoria[i]== true)
+    			contador++;
+    	}
+	
+    	return contador;
+    }
+    
+    public void setCabeza(int cabeza) {
+    	this.cabeza= cabeza;
+    }
+    
+    public int getCabeza() {
+    	return cabeza;
+    }
+    
+    public int getCubetasEncadenamiento(int enca) {
+    	return elementos[enca].getSiguiente();
+    }
+    
+    public void setCubetasEncadenamiento(int enca, int encadenamiento) {
+    	elementos[enca].setSiguiente(encadenamiento);
+    }
+    
+    public Object getCubetasCursorDato(int index) {
+    	return elementos[index].getDato();
+    }
+
 }

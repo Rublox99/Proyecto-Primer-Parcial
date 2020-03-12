@@ -32,16 +32,52 @@ public class Lista {
 
 	}	
 
-	public void SUPRIME(int posicion) {
-		if(posicion== 1) {// para suprimir en caso sea la primera posicion
-			lista.memoria[posicion]= false;
-			lista.cabeza= this.SIGUIENTE(posicion);
+	public int SUPRIME(int posicion) {
+		
+		int elemento= lista.cuentaElementos();
+		
+		if(posicion>elemento && posicion<1)
+			return -1;
+		
+		int eliminar= lista.posicionCubeta(posicion);
+		
+		if(posicion== 1 && elemento== 1) {
+			lista.cabeza= -1;
+			lista.liberaMemoria(eliminar);
+		}else {
+			if(posicion== 1) {
+				lista.setCabeza(lista.getCubetasEncadenamiento(eliminar));
+				lista.liberaMemoria(eliminar);
+			}
+			else {
+				int anterior= lista.cubetaAnterior(posicion);
+				lista.setCubetasEncadenamiento(anterior, lista.getCubetasEncadenamiento(eliminar));
+				lista.liberaMemoria(eliminar);
+			}
 		}
-		else {//para suprimir en caso no sea la primera posicion
+		
+		
+		return eliminar;
+		/*lista.liberaMemoria(posicion);
+		
+		if(posicion==1) {
+			lista.cabeza= lista.elementos[posicion].getSiguiente();
+			lista.elementos[posicion]= null;
+			
+		} else {
+			int anterior= lista.cubetaAnterior(posicion);
+			lista.elementos[anterior].setSiguiente(lista.elementos[posicion].getSiguiente());
+			lista.elementos[posicion]= null;
+		}*/
+		
+		/*if(posicion== 1) {// para suprimir en caso sea la primera posicion
+			lista.memoria[posicion]= false;
+			lista.cabeza= lista.elementos[posicion].getSiguiente();
+		}
+		else //para suprimir en caso no sea la primera posicion
 			lista.memoria[posicion]= false;
 			
-			
-		}
+			*/
 	}
 
 	public int LOCALIZA(Object n) {
